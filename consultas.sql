@@ -47,7 +47,7 @@ DROP PROCEDURE IF EXISTS `consultas_kelvia_neves` //
 CREATE DEFINER=`root`@`%` PROCEDURE `consultas_kelvia_neves`()
 BEGIN
 
--- Consultas --
+-- Consultas Kelvia Neves --
 
 -- Unión Kelvia --
 
@@ -87,6 +87,30 @@ SELECT * FROM avion WHERE base_id > 1;
 
 SELECT COUNT(*) AS total_aviones 
 FROM avion;
+
+-- Reunion natural Kelvia --
+
+SELECT *
+FROM avion
+NATURAL JOIN Pilotos;
+
+-- Reunion natural por la izquierda Kelvia --
+
+SELECT *
+FROM vuelo
+NATURAL LEFT JOIN avion;
+
+-- Reunion natural por la derecha Kelvia --
+
+SELECT *
+FROM vuelo
+NATURAL RIGHT JOIN avion;
+
+-- Producto cartesiano Kelvia --
+
+SELECT *
+FROM vuelo
+CROSS JOIN avion;
 
 END //
 
