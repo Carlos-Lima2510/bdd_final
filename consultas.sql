@@ -31,7 +31,24 @@ DROP PROCEDURE IF EXISTS `consultas_carlos_alvarado` //
 CREATE DEFINER=`root`@`%` PROCEDURE `consultas_carlos_alvarado`()
 BEGIN
 
--- Consultas --
+-- Consultas Carlos Alvarado --
+
+-- Intersección --
+
+SELECT * FROM vuelo WHERE codigo_de_vuelo LIKE 'B%' INTERSECT SELECT * FROM vuelo WHERE destino = 'Alicante';
+
+-- Diferencia --
+
+SELECT * FROM vuelo WHERE codigo_de_vuelo LIKE 'B%' EXCEPT SELECT * FROM vuelo WHERE destino = 'Madrid';
+
+-- Unión --
+
+SELECT * FROM vuelo WHERE destino = 'Madrid' UNION SELECT * FROM vuelo WHERE destino = 'Alicante';
+
+-- Agregación --
+
+SELECT MAX(hora_de_vuelo) FROM vuelo;
+
 
 END //
 
