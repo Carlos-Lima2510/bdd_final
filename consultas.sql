@@ -21,6 +21,9 @@ SELECT * FROM Pilotos WHERE horas_vuelo > 1500 EXCEPT SELECT * FROM Pilotos WHER
 -- Agregación --
 SELECT base_id, SUM(horas_vuelo) AS total_horas FROM Pilotos GROUP BY base_id;
 
+
+-- Consultas grupales --
+
 END //
 
 DELIMITER ;
