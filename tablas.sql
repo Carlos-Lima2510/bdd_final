@@ -75,6 +75,13 @@ CREATE TABLE bases (
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
+INSERT INTO bases (nombre, codigo) VALUES
+('Base Internacional JFK', 'JFK'),
+('Base Internacional LAX', 'LAX'),
+('Base Internacional ORD', 'ORD'),
+('Base Internacional ATL', 'ATL'),
+('Base Internacional CDG', 'CDG');
+
 
 
 
