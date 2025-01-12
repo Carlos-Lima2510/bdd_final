@@ -49,6 +49,22 @@ SELECT * FROM vuelo WHERE destino = 'Madrid' UNION SELECT * FROM vuelo WHERE des
 
 SELECT MAX(hora_de_vuelo) FROM vuelo;
 
+-- Reunion Natural --
+
+SELECT * FROM vuelo NATURAL JOIN avion;
+
+-- Reunión Natural por la izquierda --
+
+SELECT v.codigo_de_vuelo, v.origen, v.destino, v.hora_de_vuelo, a.codigo, a.base_id FROM vuelo AS v LEFT JOIN avion AS a ON v.avion_id = a.avion_id LEFT JOIN bases AS b ON a.base_id = b.base_id;
+
+-- Reunión Natural por la derecha --
+
+SELECT v.codigo_de_vuelo, v.origen, v.destino, v.hora_de_vuelo, a.codigo, a.base_id FROM vuelo AS v RIGHT JOIN avion AS a ON v.avion_id = a.avion_id RIGHT JOIN bases AS b ON a.base_id = b.base_id;
+
+-- Producto Cartesiano -- 
+
+SELECT * FROM vuelo CROSS JOIN avion;
+
 
 END //
 
