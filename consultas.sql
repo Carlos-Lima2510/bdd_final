@@ -56,19 +56,19 @@ FROM
 WHERE 
     base_id > 2;
 
---Intersección Kelvia--
+-- Intersección Kelvia --
 
 SELECT * FROM avion WHERE base_id >= 2
 INTERSECT
 SELECT * FROM avion WHERE base_id <= 3;
 
---Diferencia Kelvia--
+-- Diferencia Kelvia --
 
 SELECT * FROM avion WHERE base_id <= 2
 EXCEPT
 SELECT * FROM avion WHERE base_id > 1;
 
---Agregación Kelvia--
+-- Agregación Kelvia --
 
 SELECT COUNT(*) AS total_aviones 
 FROM avion;
