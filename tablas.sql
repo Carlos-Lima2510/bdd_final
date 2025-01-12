@@ -1,4 +1,5 @@
 -- Tabla de Alejandro -- 
+DROP TABLE IF EXISTS Pilotos;
 CREATE TABLE IF NOT EXISTS `Pilotos` (
     `codigo_piloto` INT AUTO_INCREMENT PRIMARY KEY,
     `nombre` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
