@@ -7,6 +7,20 @@ BEGIN
 
 -- Consultas --
 
+-- Consultas personales --
+
+-- Interseccion --
+SELECT * FROM Pilotos WHERE horas_vuelo > 2000 INTERSECT SELECT * FROM Pilotos WHERE base_id > 3;
+
+-- Union --
+SELECT * FROM Pilotos WHERE horas_vuelo < 2000 UNION SELECT * FROM Pilotos WHERE base_id <= 5;
+
+-- Diferencia --
+SELECT * FROM Pilotos WHERE horas_vuelo > 1500 EXCEPT SELECT * FROM Pilotos WHERE base_id < 5;
+
+-- Agregación --
+SELECT base_id, SUM(horas_vuelo) AS total_horas FROM Pilotos GROUP BY base_id;
+
 END //
 
 DELIMITER ;
@@ -20,6 +34,45 @@ BEGIN
 
 -- Consultas --
 
+--Unión Kelvia--
+
+SELECT 
+    avion_id, 
+    codigo, 
+    base_id 
+FROM 
+    avion 
+WHERE 
+    base_id <= 2
+
+UNION
+
+SELECT 
+    avion_id, 
+    codigo, 
+    base_id 
+FROM 
+    avion 
+WHERE 
+    base_id > 2;
+
+--Intersección Kelvia--
+
+SELECT * FROM avion WHERE base_id >= 2
+INTERSECT
+SELECT * FROM avion WHERE base_id <= 3;
+
+--Diferencia Kelvia--
+
+SELECT * FROM avion WHERE base_id <= 2
+EXCEPT
+SELECT * FROM avion WHERE base_id > 1;
+
+--Agregación Kelvia--
+
+SELECT COUNT(*) AS total_aviones 
+FROM avion;
+
 END //
 
 DELIMITER ;
@@ -31,7 +84,40 @@ DROP PROCEDURE IF EXISTS `consultas_carlos_alvarado` //
 CREATE DEFINER=`root`@`%` PROCEDURE `consultas_carlos_alvarado`()
 BEGIN
 
--- Consultas --
+-- Consultas Carlos Alvarado --
+
+-- Intersección --
+
+SELECT * FROM vuelo WHERE codigo_de_vuelo LIKE 'B%' INTERSECT SELECT * FROM vuelo WHERE destino = 'Alicante';
+
+-- Diferencia --
+
+SELECT * FROM vuelo WHERE codigo_de_vuelo LIKE 'B%' EXCEPT SELECT * FROM vuelo WHERE destino = 'Madrid';
+
+-- Unión --
+
+SELECT * FROM vuelo WHERE destino = 'Madrid' UNION SELECT * FROM vuelo WHERE destino = 'Alicante';
+
+-- Agregación --
+
+SELECT MAX(hora_de_vuelo) FROM vuelo;
+
+-- Reunion Natural --
+
+SELECT * FROM vuelo NATURAL JOIN avion;
+
+-- Reunión Natural por la izquierda --
+
+SELECT v.codigo_de_vuelo, v.origen, v.destino, v.hora_de_vuelo, a.codigo, a.base_id FROM vuelo AS v LEFT JOIN avion AS a ON v.avion_id = a.avion_id LEFT JOIN bases AS b ON a.base_id = b.base_id;
+
+-- Reunión Natural por la derecha --
+
+SELECT v.codigo_de_vuelo, v.origen, v.destino, v.hora_de_vuelo, a.codigo, a.base_id FROM vuelo AS v RIGHT JOIN avion AS a ON v.avion_id = a.avion_id RIGHT JOIN bases AS b ON a.base_id = b.base_id;
+
+-- Producto Cartesiano -- 
+
+SELECT * FROM vuelo CROSS JOIN avion;
+
 
 END //
 
@@ -82,6 +168,49 @@ CREATE DEFINER=`root`@`%` PROCEDURE `consultas_miguel_rivas`()
 BEGIN
 
 -- Consultas --
+-- Personales --
+-- Union --
+SELECT base_id, nombre, codigo, ciudad
+FROM bases
+WHERE codigo = 'JFK'
+
+UNION
+
+SELECT base_id, nombre, codigo, ciudad
+FROM bases
+WHERE codigo = 'LAX';
+
+-- Intersección --
+SELECT base_id, nombre, codigo, ciudad
+FROM bases
+WHERE codigo = 'JFK'
+
+INTERSECT
+
+SELECT base_id, nombre, codigo, ciudad
+FROM bases
+WHERE ciudad = 'Nueva York';
+
+-- Diferencia --  
+SELECT base_id, nombre, codigo, ciudad 
+FROM bases 
+WHERE codigo = 'JFK' OR codigo = 'ORD' OR codigo = 'LAX' 
+
+EXCEPT  
+
+SELECT base_id, nombre, codigo, ciudad 
+FROM bases 
+WHERE codigo = 'JFK' OR codigo = 'ORD';
+
+-- Agregación -- 
+SELECT ciudad, COUNT(*) AS total_bases
+FROM bases
+GROUP BY ciudad;
+
+-- Reunión natural --   
+-- Renunión natural por izquierda --  
+-- Reunión natural por derecha --  
+-- Producro cartesiano --  
 
 END //
 
