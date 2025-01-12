@@ -79,11 +79,7 @@ INSERT INTO bases (nombre, codigo, ciudad) VALUES
 ('Base Internacional ORD', 'ORD', 'Chicago'),
 ('Base Internacional ATL', 'ATL', 'Atlanta'),
 ('Base Internacional CDG', 'CDG', 'París'),
-('Base Internacional MAD', 'MAD', 'Madrid'),
-('Base Internacional SFO', 'SFO', 'San Francisco'),
-('Base Internacional SYD', 'SYD', 'Sídney'),
-('Base Internacional DXB', 'DXB', 'Dubái'),
-('Base Internacional NRT', 'NRT', 'Tokio');
+('Base Internacional MAD', 'MAD', 'Madrid');
 
 
 
