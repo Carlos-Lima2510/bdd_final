@@ -91,4 +91,5 @@ CREATE TABLE IF NOT EXISTS vuelo (
 ) ENGINE=InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO vuelo (codigo_de_vuelo, origen, destino, hora_de_vuelo, avion_id, codigo_piloto, codigo_miembro)
-VALUES ('BA-1034', "Palma", "Alicante", "13:50:00", 1, 1,1);
+VALUES ('BA-1034', "Palma", "Alicante", "13:50:00", 1, 1,1),
+('BA-1035', "Palma", "Madrid", "16:00:00", 2, 2,3);
