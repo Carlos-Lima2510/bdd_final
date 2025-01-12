@@ -243,10 +243,51 @@ SELECT ciudad, COUNT(*) AS total_bases
 FROM bases
 GROUP BY ciudad;
 
+-- Grupales --
 -- Reunión natural --   
+SELECT * FROM bases NATURAL JOIN vuelo;
+
 -- Renunión natural por izquierda --  
--- Reunión natural por derecha --  
+SELECT 
+    Pilotos.codigo_piloto,
+    Pilotos.nombre AS nombre_piloto,
+    Pilotos.horas_vuelo,
+    bases.nombre AS nombre_base,
+    bases.ciudad
+FROM 
+    bases
+LEFT JOIN 
+    Pilotos
+ON 
+    bases.base_id = Pilotos.base_id;
+
+-- Reunión natural por derecha -- 
+SELECT 
+    Pilotos.codigo_piloto,
+    Pilotos.nombre AS nombre_piloto,
+    Pilotos.horas_vuelo,
+    bases.nombre AS nombre_base,
+    bases.ciudad
+FROM 
+    bases
+RIGHT JOIN 
+    Pilotos
+ON 
+    bases.base_id = Pilotos.base_id;
+
 -- Producro cartesiano --  
+SELECT 
+    Pilotos.codigo_piloto,
+    Pilotos.nombre AS nombre_piloto,
+    Pilotos.horas_vuelo,
+    bases.base_id,
+    bases.nombre AS nombre_base,
+    bases.ciudad
+FROM 
+    Pilotos
+CROSS JOIN 
+    bases;
+
 
 END //
 
