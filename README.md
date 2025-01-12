@@ -12,12 +12,12 @@ Cada avión tiene un código, es de un tipo (por ejemplo, BOEING-747) y tiene un
 las revisiones periódicas de mantenimiento.
 
 # Consultas:
-Unión
-Intersección
-Diferencia
-Agregación 
+Unión  
+Intersección  
+Diferencia  
+Agregación  
 
-Reunión natural 
-Renunión natural por izquierda
-Reunión natural por derecha
-Producro cartesiano
+Reunión natural   
+Renunión natural por izquierda  
+Reunión natural por derecha  
+Producro cartesiano  
