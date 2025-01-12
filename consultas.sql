@@ -58,7 +58,16 @@ SELECT inicio_vuelo FROM miembros_de_tripulacion AS m1 EXCEPT SELECT final_vuelo
 SELECT AVG(inicio_vuelo) FROM miembros_de_tripulacion;
 
 -- REUNION NATURAL --
+ SELECT * FROM miembros_de_tripulacion NATURAL JOIN miembros_de_tripulacion AS m2;
 
+-- Renunión natural por izquierda --
+SELECT * FROM miembros_de_tripulacion m1 LEFT JOIN miembros_de_tripulacion AS m2 ON m1.inicio_vuelo = m2.inicio_vuelo;
+
+-- Renunión natural por derecha --
+SELECT m1.final_vuelo FROM miembros_de_tripulacion m1 RIGHT JOIN miembros_de_tripulacion AS m2 ON m1.inicio_vuelo = m2.inicio_vuelo;
+
+-- PRODUCTO CARTESIANO --
+SELECT * FROM miembros_de_tripulacion m1 CROSS JOIN miembros_de_tripulacion AS m2;
 
 
 END //
