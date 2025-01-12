@@ -24,6 +24,18 @@ SELECT base_id, SUM(horas_vuelo) AS total_horas FROM Pilotos GROUP BY base_id;
 
 -- Consultas grupales --
 
+-- Reunion natural --
+SELECT * FROM Pilotos NATURAL JOIN vuelo;
+
+-- Reunion natural por la izquierda --
+SELECT Pilotos.codigo_piloto, Pilotos.nombre, Pilotos.horas_vuelo, Pilotos.base_id, vuelo.vuelo_id, vuelo.codigo_de_vuelo, vuelo.origen, vuelo.destino, vuelo.hora_de_vuelo, vuelo.avion_id, vuelo.codigo_miembro FROM Pilotos LEFT JOIN vuelo ON Pilotos.codigo_piloto = vuelo.codigo_piloto;
+
+-- Reunion natural por la derecha --
+SELECT Pilotos.codigo_piloto, Pilotos.nombre, Pilotos.horas_vuelo, Pilotos.base_id, vuelo.vuelo_id, vuelo.codigo_de_vuelo, vuelo.origen, vuelo.destino, vuelo.hora_de_vuelo, vuelo.avion_id, vuelo.codigo_miembro FROM Pilotos RIGHT JOIN vuelo ON Pilotos.codigo_piloto = vuelo.codigo_piloto;
+
+-- Producto cartesiano --
+SELECT Pilotos.codigo_piloto, Pilotos.nombre, Pilotos.horas_vuelo, Pilotos.base_id, vuelo.vuelo_id, vuelo.codigo_de_vuelo, vuelo.origen, vuelo.destino, vuelo.hora_de_vuelo, vuelo.avion_id, vuelo.codigo_miembro FROM Pilotos CROSS JOIN vuelo;
+
 END //
 
 DELIMITER ;
