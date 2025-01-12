@@ -67,7 +67,7 @@
 DROP TABLE IF EXISTS bases;
 
 CREATE TABLE bases (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    base_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
     codigo VARCHAR(10),
     UNIQUE (codigo)
