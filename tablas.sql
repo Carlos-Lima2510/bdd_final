@@ -44,7 +44,7 @@
 
 -- Tabla de Manuel ---
 
-
+CREATE TABLE IF NOT EXISTS `miembros_de_tripulacion`( codigo_miembro INT AUTO_INCREMENT NOT NULL, nombre varchar(63) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL, `inicio_vuelo` TIME, `final_vuelo` TIME, PRIMARY KEY(`codigo_miembro`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 
