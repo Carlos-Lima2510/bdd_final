@@ -10,3 +10,14 @@ realizar durante los próximos tres meses, así como de los vuelos que ya se han
 avión en que se va a hacer o en el que se ha hecho, el piloto y cada uno de los miembros de la tripulación.
 Cada avión tiene un código, es de un tipo (por ejemplo, BOEING-747) y tiene una base donde es sometido a
 las revisiones periódicas de mantenimiento.
+
+# Consultas:
+Unión
+Intersección
+Diferencia
+Agregación 
+
+Reunión natural 
+Renunión natural por izquierda
+Reunión natural por derecha
+Producro cartesiano
