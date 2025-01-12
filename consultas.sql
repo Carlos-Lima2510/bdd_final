@@ -44,7 +44,22 @@ DROP PROCEDURE IF EXISTS `consultas_manuel_munoz` //
 CREATE DEFINER=`root`@`%` PROCEDURE `consultas_manuel_munoz`()
 BEGIN
 
--- Consultas --
+-- UNION --
+
+SELECT nombre FROM miembros_de_tripulacion AS m1 UNION SELECT nombre FROM miembros_de_tripulacion AS m2;
+
+-- INTERSECCIÓN --
+SELECT inicio_vuelo FROM miembros_de_tripulacion AS m1 INTERSECT SELECT final_vuelo FROM miembros_de_tripulacion AS m2;
+
+-- DIFERENCIA --
+SELECT inicio_vuelo FROM miembros_de_tripulacion AS m1 EXCEPT SELECT final_vuelo FROM miembros_de_tripulacion AS m2;
+
+-- AGREGACION --
+SELECT AVG(inicio_vuelo) FROM miembros_de_tripulacion;
+
+-- REUNION NATURAL --
+
+
 
 END //
 
