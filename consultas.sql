@@ -2,7 +2,7 @@ DELIMITER //
 
 DROP PROCEDURE IF EXISTS `consultas_alejandro_juarez` //
 
-CREATE DEFINER=`carlos.alvarado`@`%` PROCEDURE `consultas_alejandro_juarez`()
+CREATE DEFINER=`root`@`%` PROCEDURE `consultas_alejandro_juarez`()
 BEGIN
 
 -- Consultas --
@@ -15,7 +15,7 @@ DELIMITER //
 
 DROP PROCEDURE IF EXISTS `consultas_kelvia_neves` //
 
-CREATE DEFINER=`carlos.alvarado`@`%` PROCEDURE `consultas_kelvia_neves`()
+CREATE DEFINER=`root`@`%` PROCEDURE `consultas_kelvia_neves`()
 BEGIN
 
 -- Consultas --
@@ -28,7 +28,7 @@ DELIMITER //
 
 DROP PROCEDURE IF EXISTS `consultas_carlos_alvarado` //
 
-CREATE DEFINER=`carlos.alvarado`@`%` PROCEDURE `consultas_carlos_alvarado`()
+CREATE DEFINER=`root`@`%` PROCEDURE `consultas_carlos_alvarado`()
 BEGIN
 
 -- Consultas Carlos Alvarado --
@@ -74,7 +74,7 @@ DELIMITER //
 
 DROP PROCEDURE IF EXISTS `consultas_manuel_munoz` //
 
-CREATE DEFINER=`carlos.alvarado`@`%` PROCEDURE `consultas_manuel_munoz`()
+CREATE DEFINER=`root`@`%` PROCEDURE `consultas_manuel_munoz`()
 BEGIN
 
 -- Consultas --
@@ -87,7 +87,7 @@ DELIMITER //
 
 DROP PROCEDURE IF EXISTS `consultas_miguel_rivas` //
 
-CREATE DEFINER=`carlos.alvarado`@`%` PROCEDURE `consultas_miguel_rivas`()
+CREATE DEFINER=`root`@`%` PROCEDURE `consultas_miguel_rivas`()
 BEGIN
 
 -- Consultas --
