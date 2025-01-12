@@ -25,7 +25,7 @@ INSERT INTO `Pilotos` (`nombre`, `horas_vuelo`, `base_id`) VALUES ('Alejandro Ju
 
 
 -- Tabla de Kelvia --
-
+DROP TABLE IF EXISTS avion;
 CREATE TABLE avion (
     avion_id INT AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(50),
@@ -78,7 +78,7 @@ INSERT INTO bases (nombre, codigo, ciudad) VALUES
 ('Base Internacional LAX', 'LAX', 'Los Ángeles'),
 ('Base Internacional ORD', 'ORD', 'Chicago'),
 ('Base Internacional ATL', 'ATL', 'Atlanta'),
-('Base Internacional CDG', 'CDG', 'París'),
+('Base Internacional CDG', 'CDG', 'París');
 
 
 
@@ -91,6 +91,7 @@ INSERT INTO bases (nombre, codigo, ciudad) VALUES
 
 
 -- Tabla de Carlos --
+DROP TABLE IF EXISTS vuelo;
 CREATE TABLE IF NOT EXISTS vuelo (
     vuelo_id INT PRIMARY KEY AUTO_INCREMENT,
     codigo_de_vuelo CHAR(7) NOT NULL,
