@@ -7,6 +7,20 @@ BEGIN
 
 -- Consultas --
 
+-- Consultas personales --
+
+-- Interseccion --
+SELECT * FROM Pilotos WHERE horas_vuelo > 2000 INTERSECT SELECT * FROM Pilotos WHERE base_id > 3;
+
+-- Union --
+SELECT * FROM Pilotos WHERE horas_vuelo < 2000 UNION SELECT * FROM Pilotos WHERE base_id <= 5;
+
+-- Diferencia --
+SELECT * FROM Pilotos WHERE horas_vuelo > 1500 EXCEPT SELECT * FROM Pilotos WHERE base_id < 5;
+
+-- Agregación --
+SELECT base_id, SUM(horas_vuelo) AS total_horas FROM Pilotos GROUP BY base_id;
+
 END //
 
 DELIMITER ;
