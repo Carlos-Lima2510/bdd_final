@@ -20,6 +20,45 @@ BEGIN
 
 -- Consultas --
 
+--Unión Kelvia--
+
+SELECT 
+    avion_id, 
+    codigo, 
+    base_id 
+FROM 
+    avion 
+WHERE 
+    base_id <= 2
+
+UNION
+
+SELECT 
+    avion_id, 
+    codigo, 
+    base_id 
+FROM 
+    avion 
+WHERE 
+    base_id > 2;
+
+--Intersección Kelvia--
+
+SELECT * FROM avion WHERE base_id >= 2
+INTERSECT
+SELECT * FROM avion WHERE base_id <= 3;
+
+--Diferencia Kelvia--
+
+SELECT * FROM avion WHERE base_id <= 2
+EXCEPT
+SELECT * FROM avion WHERE base_id > 1;
+
+--Agregación Kelvia--
+
+SELECT COUNT(*) AS total_aviones 
+FROM avion;
+
 END //
 
 DELIMITER ;
